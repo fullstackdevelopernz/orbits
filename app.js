@@ -1,4 +1,4 @@
-let products = [];
+﻿let products = [];
 let cart = JSON.parse(localStorage.getItem('orbit-cart') || '{}');
 
 const money = cents => new Intl.NumberFormat('en-NZ', {style:'currency', currency:'NZD'}).format(cents/100);
@@ -46,7 +46,7 @@ function homeTemplate(){
     </div>
     <div class="hero-visual">
       <img src="assets/manifestation-collection.png" alt="Orbit Manifestation plush bag charm collection">
-      <div class="floating-note">36 Orbits · 3 worlds · 1 collection</div>
+      <div class="floating-note">36 Orbits Â· 3 worlds Â· 1 collection</div>
     </div>
   </section>
   <section class="section">
@@ -67,7 +67,7 @@ function homeTemplate(){
 }
 function collectionCard(key,title,copy){
  return `<a class="collection-card" href="#collection/${key}">
-   <img src="assets/${key}-collection.png" alt="${title}">
+   <img src="assets/covers/${key}-collection-cover.png" alt="${title}">
    <div class="collection-copy"><p class="eyebrow">12 collectible bag charms</p><h3>${title}</h3><p>${copy}</p></div>
  </a>`;
 }
@@ -127,7 +127,7 @@ function productTemplate(p){
      <h1>${p.name}</h1>
      <p class="price">${money(p.price)} NZD</p>
      <p>${p.tagline}. ${p.description}</p>
-     <ul class="feature-list">${p.features.map(f=>`<li>✦ ${f}</li>`).join('')}</ul>
+     <ul class="feature-list">${p.features.map(f=>`<li>âœ¦ ${f}</li>`).join('')}</ul>
      <button class="primary wide add" data-add="${p.id}">Add to bag</button>
      <p class="fineprint">Prototype price shown. Confirm retail price, shipping rules and stock before launch.</p>
    </div>
@@ -162,7 +162,7 @@ function updateCart(){
    const p=products.find(x=>x.id===id); if(!p)return '';
    return `<div class="cart-item">
     <img src="${p.image}" alt="${p.name}">
-    <div><strong>${p.name}</strong><p>${money(p.price)}</p><div class="qty"><button data-qty="${id}" data-delta="-1">−</button><span>${qty}</span><button data-qty="${id}" data-delta="1">+</button></div></div>
+    <div><strong>${p.name}</strong><p>${money(p.price)}</p><div class="qty"><button data-qty="${id}" data-delta="-1">âˆ’</button><span>${qty}</span><button data-qty="${id}" data-delta="1">+</button></div></div>
     <strong>${money(p.price*qty)}</strong>
    </div>`;
  }).join('');
@@ -191,3 +191,4 @@ document.getElementById('closeCart').addEventListener('click',closeCart);
 document.getElementById('overlay').addEventListener('click',closeCart);
 document.getElementById('checkoutButton').addEventListener('click',()=>alert('Checkout integration is not yet live. Connect Stripe, Shopify, or another provider before accepting payment.'));
 init();
+
