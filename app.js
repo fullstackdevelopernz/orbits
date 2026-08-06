@@ -1,4 +1,4 @@
-﻿let products = [];
+let products = [];
 let cart = JSON.parse(localStorage.getItem('orbit-cart') || '{}');
 
 const money = cents => new Intl.NumberFormat('en-NZ', {style:'currency', currency:'NZD'}).format(cents/100);
@@ -45,7 +45,7 @@ function homeTemplate(){
       </div>
     </div>
     <div class="hero-visual">
-      <img src="assets/manifestation-collection.png" alt="Orbit Manifestation plush bag charm collection">
+      <img src="assets/covers/manifestation-collection-cover.png" alt="Orbit Manifestation plush bag charm collection">
       <div class="floating-note">36 Orbits Â· 3 worlds Â· 1 collection</div>
     </div>
   </section>
@@ -93,7 +93,7 @@ function collectionTemplate(key,items){
      <p>${collectionCopy(key)}</p>
      <a class="primary" href="#shop">View all collections</a>
    </div>
-   <img src="assets/${key}-collection.png" alt="${collectionTitle(key)}">
+   <img src="assets/covers/${key}-collection-cover.png" alt="${collectionTitle(key)}">
  </section>
  <section class="shop-shell">${productGrid(items)}</section>`;
 }
@@ -162,7 +162,7 @@ function updateCart(){
    const p=products.find(x=>x.id===id); if(!p)return '';
    return `<div class="cart-item">
     <img src="${p.image}" alt="${p.name}">
-    <div><strong>${p.name}</strong><p>${money(p.price)}</p><div class="qty"><button data-qty="${id}" data-delta="-1">âˆ’</button><span>${qty}</span><button data-qty="${id}" data-delta="1">+</button></div></div>
+    <div><strong>${p.name}</strong><p>${money(p.price)}</p><div class="qty"><button data-qty="${id}" data-delta="-1">−</button><span>${qty}</span><button data-qty="${id}" data-delta="1">+</button></div></div>
     <strong>${money(p.price*qty)}</strong>
    </div>`;
  }).join('');
@@ -191,4 +191,5 @@ document.getElementById('closeCart').addEventListener('click',closeCart);
 document.getElementById('overlay').addEventListener('click',closeCart);
 document.getElementById('checkoutButton').addEventListener('click',()=>alert('Checkout integration is not yet live. Connect Stripe, Shopify, or another provider before accepting payment.'));
 init();
+
 
