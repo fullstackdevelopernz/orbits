@@ -34,31 +34,42 @@ function render(){
 
 function homeTemplate(){
   return `
-  <section class="hero">
+  <section class="hero hero-reimagined">
     <div class="hero-copy">
-      <p class="eyebrow">Eden Toy Co.</p>
-      <h1>Orbits are made to be clipped on, carried everywhere and collected with joy.</h1>
-      <p>Meet Eden Toy Co.’s signature plush bag charm line — 36 soft, collectible Orbits across Crystal, Manifestation and Zodiac. Premium enough to gift, playful enough to love every day.</p>
+      <img class="hero-master-logo" src="assets/branding/eden-toy-co-logo.png" alt="Eden Toy Co.">
+      <p class="hero-kicker">Meet Orbits</p>
+      <h1>Little plush personalities for bags, keys and everyday magic.</h1>
+      <p class="hero-intro">Collect the feeling that fits you. Each Eden Toy Co. Orbit is soft, giftable and made to bring a little joy wherever it goes.</p>
       <div class="hero-actions">
-        <a class="primary" href="#shop">Shop Orbits</a>
-        <a class="secondary" href="#collection/manifestation">Explore collections</a>
+        <a class="primary" href="#shop">Shop all Orbits</a>
+        <a class="secondary" href="#collection/manifestation">Meet the collections</a>
+      </div>
+      <div class="hero-proof">
+        <span><strong>36</strong> characters</span>
+        <span><strong>3</strong> worlds</span>
+        <span><strong>1</strong> joyful collection</span>
       </div>
     </div>
-    <div class="hero-visual brand-stage">
-      <img class="hero-brand-logo" src="assets/branding/eden-toy-co-logo.png" alt="Eden Toy Co.">
-      <img class="hero-collection-image" src="assets/manifestation-collection.png" alt="Orbit Manifestation plush bag charm collection">
-      <div class="floating-note">36 Orbits · 3 collections</div>
+    <div class="hero-showcase">
+      <div class="spark spark-a">✦</div>
+      <div class="spark spark-b">✦</div>
+      <div class="spark spark-c">✦</div>
+      <img class="hero-collection-image" src="assets/manifestation-collection.png" alt="Manifestation Orbit plush bag charm collection">
+      <a class="floating-toy toy-love" href="#product/manifestation-love"><img src="assets/products/manifestation-love.jpg" alt="Love Orbit"></a>
+      <a class="floating-toy toy-luck" href="#product/manifestation-luck"><img src="assets/products/manifestation-luck.jpg" alt="Luck Orbit"></a>
+      <a class="floating-toy toy-dreams" href="#product/manifestation-dreams"><img src="assets/products/manifestation-dreams.jpg" alt="Dreams Orbit"></a>
+      <div class="floating-note">Tap a floating Orbit</div>
     </div>
   </section>
-  <section class="section">
-    <div class="section-heading">
-      <div><p class="eyebrow">Collect by feeling</p><h2>Choose your Orbit world</h2></div>
-      <p>Eden Toy Co. builds Orbits as collectible plush charm series — each one lovable on its own, even better as a full set.</p>
+  <section class="section collections-section">
+    <div class="section-heading brand-heading">
+      <div><p class="eyebrow">Three ways to collect</p><h2>Choose your Orbit world</h2></div>
+      <p>Each world has its own mood, palette and personality — designed as part of one unmistakable Eden Toy Co. family.</p>
     </div>
-    <div class="collection-grid">
-      ${collectionCard('crystal','Crystal Collection','Energy, intention and elemental beauty.')}
-      ${collectionCard('manifestation','Manifestation Collection','Carry the feeling you want to create.')}
-      ${collectionCard('zodiac','Zodiac Collection','Your sign, your character, your Orbit.')}
+    <div class="collection-grid collection-grid-brand">
+      ${collectionCard('crystal','Crystal','Find your energy','Soft mineral tones, tiny golden symbols and characters inspired by the crystals people love.')}
+      ${collectionCard('manifestation','Manifestation','Carry your intention','A joyful cast built around love, luck, peace, healing, abundance and more.')}
+      ${collectionCard('zodiac','Zodiac','Meet your sign','Twelve characterful signs, reimagined as soft companions with collectible details.')}
     </div>
   </section>
   <section class="shop-shell">
@@ -66,10 +77,17 @@ function homeTemplate(){
     ${productGrid(products.slice(0,8))}
   </section>`;
 }
-function collectionCard(key,title,copy){
- return `<a class="collection-card" href="#collection/${key}">
-   <img src="assets/${key}-collection.png" alt="${title}">
-   <div class="collection-copy"><p class="eyebrow">12 plush bag charms</p><h3>${title}</h3><p>${copy}</p></div>
+function collectionCard(key,title,kicker,copy){
+ return `<a class="collection-card brand-collection-card ${key}" href="#collection/${key}">
+   <div class="collection-number">0${key==='crystal'?1:key==='manifestation'?2:3}</div>
+   <img src="assets/${key}-collection.png" alt="${title} Orbit collection">
+   <div class="collection-chip">12 Orbits</div>
+   <div class="collection-copy">
+     <p class="collection-kicker">${kicker}</p>
+     <h3>${title}</h3>
+     <p>${copy}</p>
+     <span class="collection-link">Explore collection <b>→</b></span>
+   </div>
  </a>`;
 }
 function shopTemplate(items,title){
@@ -100,9 +118,7 @@ function collectionCopy(key){
    zodiac:'Twelve character-led plush charms, one for every sign of the zodiac.'
  }[key];
 }
-function productGrid(items){
- return `<div class="product-grid">${items.map(productCard).join('')}</div>`;
-}
+function productGrid(items){ return `<div class="product-grid">${items.map(productCard).join('')}</div>`; }
 function productCard(p){
  return `<article class="product-card">
    <a href="#product/${p.id}"><img src="${p.image}" alt="${p.name}"></a>
@@ -147,41 +163,24 @@ function bindAddButtons(){
    openCart();
  }));
 }
-function persistCart(){
- localStorage.setItem('edentoyco-cart',JSON.stringify(cart));
- updateCart();
-}
+function persistCart(){ localStorage.setItem('edentoyco-cart',JSON.stringify(cart)); updateCart(); }
 function updateCart(){
  const count=Object.values(cart).reduce((a,b)=>a+b,0);
  document.getElementById('cartCount').textContent=count;
  const rows=Object.entries(cart).map(([id,qty])=>{
    const p=products.find(x=>x.id===id); if(!p)return '';
-   return `<div class="cart-item">
-    <img src="${p.image}" alt="${p.name}">
-    <div><strong>${p.name}</strong><p>${money(p.price)}</p><div class="qty"><button data-qty="${id}" data-delta="-1">−</button><span>${qty}</span><button data-qty="${id}" data-delta="1">+</button></div></div>
-    <strong>${money(p.price*qty)}</strong>
-   </div>`;
+   return `<div class="cart-item"><img src="${p.image}" alt="${p.name}"><div><strong>${p.name}</strong><p>${money(p.price)}</p><div class="qty"><button data-qty="${id}" data-delta="-1">−</button><span>${qty}</span><button data-qty="${id}" data-delta="1">+</button></div></div><strong>${money(p.price*qty)}</strong></div>`;
  }).join('');
  document.getElementById('cartItems').innerHTML=rows||'<div class="empty">Your Eden Toy Co. bag is empty.</div>';
- const subtotal=Object.entries(cart).reduce((sum,[id,qty])=>{
-   const p=products.find(x=>x.id===id); return sum+(p?p.price*qty:0);
- },0);
+ const subtotal=Object.entries(cart).reduce((sum,[id,qty])=>{ const p=products.find(x=>x.id===id); return sum+(p?p.price*qty:0); },0);
  document.getElementById('subtotal').textContent=money(subtotal)+' NZD';
  document.querySelectorAll('[data-qty]').forEach(btn=>btn.addEventListener('click',()=>{
    const id=btn.dataset.qty; cart[id]=(cart[id]||0)+Number(btn.dataset.delta);
    if(cart[id]<=0)delete cart[id]; persistCart();
  }));
 }
-function openCart(){
- document.getElementById('cartDrawer').classList.add('open');
- document.getElementById('overlay').classList.add('show');
- document.getElementById('cartDrawer').setAttribute('aria-hidden','false');
-}
-function closeCart(){
- document.getElementById('cartDrawer').classList.remove('open');
- document.getElementById('overlay').classList.remove('show');
- document.getElementById('cartDrawer').setAttribute('aria-hidden','true');
-}
+function openCart(){ document.getElementById('cartDrawer').classList.add('open'); document.getElementById('overlay').classList.add('show'); document.getElementById('cartDrawer').setAttribute('aria-hidden','false'); }
+function closeCart(){ document.getElementById('cartDrawer').classList.remove('open'); document.getElementById('overlay').classList.remove('show'); document.getElementById('cartDrawer').setAttribute('aria-hidden','true'); }
 document.getElementById('cartButton').addEventListener('click',openCart);
 document.getElementById('closeCart').addEventListener('click',closeCart);
 document.getElementById('overlay').addEventListener('click',closeCart);
