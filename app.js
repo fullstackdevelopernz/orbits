@@ -1,4 +1,3 @@
-
 let products = [];
 let cart = JSON.parse(localStorage.getItem('orbit-cart') || '{}');
 
@@ -37,45 +36,45 @@ function homeTemplate(){
   return `
   <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow">Eden Toy Co. presents</p>
-      <h1>Find your Orbit.</h1>
-      <p>Premium plush bag charms made to carry personality, meaning and a little magic. Choose from 36 collectible Orbits across three signature collections.</p>
+      <p class="eyebrow">Collectible plush companions by Eden Toy Co.</p>
+      <h1>Carry the Orbit that feels like you.</h1>
+      <p>Thirty-six premium plush bag charms across three signature worlds. Choose a crystal, intention or zodiac companion and make it part of your everyday story.</p>
       <div class="hero-actions">
-        <a class="primary" href="#shop">Shop all 36 Orbits</a>
-        <a class="secondary" href="#collection/manifestation">Explore collections</a>
+        <a class="primary" href="#shop">Meet all 36 Orbits</a>
+        <a class="secondary" href="#collection/manifestation">Explore the collections</a>
       </div>
     </div>
     <div class="hero-visual">
       <img src="assets/manifestation-collection.png" alt="Orbit Manifestation plush bag charm collection">
-      <div class="floating-note">36 Orbits · 3 collections</div>
+      <div class="floating-note">36 Orbits · 3 worlds · 1 collection</div>
     </div>
   </section>
   <section class="section">
     <div class="section-heading">
-      <div><p class="eyebrow">Three worlds to collect</p><h2>Choose your collection</h2></div>
-      <p>Every Orbit is designed as a standalone keepsake and part of a complete collectible series.</p>
+      <div><p class="eyebrow">Choose the world that speaks to you</p><h2>Three collections. Thirty-six personalities.</h2></div>
+      <p>Every Orbit stands alone as a character and belongs to a complete collectible series. Start with one that feels personal, then build your own constellation.</p>
     </div>
     <div class="collection-grid">
-      ${collectionCard('crystal','Crystal Collection','Energy, intention and elemental beauty.')}
-      ${collectionCard('manifestation','Manifestation Collection','Carry the feeling you want to create.')}
-      ${collectionCard('zodiac','Zodiac Collection','Your sign, your character, your Orbit.')}
+      ${collectionCard('crystal','Crystal Collection','Twelve companions inspired by energy, intention and elemental beauty.')}
+      ${collectionCard('manifestation','Manifestation Collection','Twelve symbols designed around the feeling you want to carry forward.')}
+      ${collectionCard('zodiac','Zodiac Collection','Twelve character-led companions, one for every sign of the zodiac.')}
     </div>
   </section>
   <section class="shop-shell">
-    <div class="section-heading"><div><p class="eyebrow">Featured Orbits</p><h2>Start your collection</h2></div></div>
+    <div class="section-heading"><div><p class="eyebrow">Featured companions</p><h2>Find your first Orbit.</h2></div><p>Each Orbit is designed with premium plush, embroidered details and signature gold-tone hardware.</p></div>
     ${productGrid(products.slice(0,8))}
   </section>`;
 }
 function collectionCard(key,title,copy){
  return `<a class="collection-card" href="#collection/${key}">
    <img src="assets/${key}-collection.png" alt="${title}">
-   <div class="collection-copy"><p class="eyebrow">12 plush bag charms</p><h3>${title}</h3><p>${copy}</p></div>
+   <div class="collection-copy"><p class="eyebrow">12 collectible bag charms</p><h3>${title}</h3><p>${copy}</p></div>
  </a>`;
 }
 function shopTemplate(items,title){
  return `<section class="shop-shell">
    <div class="shop-top">
-     <div><p class="eyebrow">The complete range</p><h2>${title}</h2></div>
+     <div><p class="eyebrow">The complete Orbit universe</p><h2>${title}</h2></div>
      <div class="filters">
        <button class="filter active" data-filter="all">All 36</button>
        <button class="filter" data-filter="crystal">Crystal</button>
@@ -88,16 +87,21 @@ function shopTemplate(items,title){
 }
 function collectionTemplate(key,items){
  return `<section class="collection-hero">
-   <div><p class="eyebrow">12 collectible Orbits</p><h1>${collectionTitle(key)}</h1><p>${collectionCopy(key)}</p><a class="primary" href="#shop">View all collections</a></div>
+   <div class="collection-hero-copy">
+     <p class="eyebrow">12 signature Orbits</p>
+     <h1>${collectionTitle(key)}</h1>
+     <p>${collectionCopy(key)}</p>
+     <a class="primary" href="#shop">View all collections</a>
+   </div>
    <img src="assets/${key}-collection.png" alt="${collectionTitle(key)}">
  </section>
  <section class="shop-shell">${productGrid(items)}</section>`;
 }
 function collectionCopy(key){
  return {
-   crystal:'Twelve crystal-inspired companions, each matched to a distinct intention and finished with signature gold-tone hardware.',
-   manifestation:'Twelve plush symbols of abundance, love, luck, protection, peace, healing, confidence, success, clarity, joy, dreams and alignment.',
-   zodiac:'Twelve character-led plush charms, one for every sign of the zodiac.'
+   crystal:'Twelve crystal-inspired plush companions, each paired with a distinct intention and finished with signature gold-tone hardware.',
+   manifestation:'Twelve expressive plush symbols for abundance, love, luck, protection, peace, healing, confidence, success, clarity, joy, dreams and alignment.',
+   zodiac:'Twelve character-led plush companions, one for every sign of the zodiac and made to feel instantly personal.'
  }[key];
 }
 function productGrid(items){
