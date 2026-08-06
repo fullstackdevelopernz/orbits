@@ -1,0 +1,614 @@
+[
+  {
+    "id": "crystal-rose-quartz",
+    "name": "Rose Quartz Orbit",
+    "shortName": "Rose Quartz",
+    "collection": "crystal",
+    "tagline": "Invite love",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/crystal-rose-quartz.jpg",
+    "description": "A premium plush bag charm from the Crystal Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "crystal-amethyst",
+    "name": "Amethyst Orbit",
+    "shortName": "Amethyst",
+    "collection": "crystal",
+    "tagline": "Trust your intuition",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/crystal-amethyst.jpg",
+    "description": "A premium plush bag charm from the Crystal Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "crystal-clear-quartz",
+    "name": "Clear Quartz Orbit",
+    "shortName": "Clear Quartz",
+    "collection": "crystal",
+    "tagline": "Amplify energy",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/crystal-clear-quartz.jpg",
+    "description": "A premium plush bag charm from the Crystal Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "crystal-citrine",
+    "name": "Citrine Orbit",
+    "shortName": "Citrine",
+    "collection": "crystal",
+    "tagline": "Attract abundance",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/crystal-citrine.jpg",
+    "description": "A premium plush bag charm from the Crystal Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "crystal-green-aventurine",
+    "name": "Green Aventurine Orbit",
+    "shortName": "Green Aventurine",
+    "collection": "crystal",
+    "tagline": "Welcome opportunity",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/crystal-green-aventurine.jpg",
+    "description": "A premium plush bag charm from the Crystal Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "crystal-black-obsidian",
+    "name": "Black Obsidian Orbit",
+    "shortName": "Black Obsidian",
+    "collection": "crystal",
+    "tagline": "Protect your energy",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/crystal-black-obsidian.jpg",
+    "description": "A premium plush bag charm from the Crystal Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "crystal-fluorite",
+    "name": "Fluorite Orbit",
+    "shortName": "Fluorite",
+    "collection": "crystal",
+    "tagline": "Find mental clarity",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/crystal-fluorite.jpg",
+    "description": "A premium plush bag charm from the Crystal Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "crystal-lapis-lazuli",
+    "name": "Lapis Lazuli Orbit",
+    "shortName": "Lapis Lazuli",
+    "collection": "crystal",
+    "tagline": "Speak your truth",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/crystal-lapis-lazuli.jpg",
+    "description": "A premium plush bag charm from the Crystal Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "crystal-moonstone",
+    "name": "Moonstone Orbit",
+    "shortName": "Moonstone",
+    "collection": "crystal",
+    "tagline": "Trust new beginnings",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/crystal-moonstone.jpg",
+    "description": "A premium plush bag charm from the Crystal Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "crystal-tigers-eye",
+    "name": "Tiger's Eye Orbit",
+    "shortName": "Tiger's Eye",
+    "collection": "crystal",
+    "tagline": "Build confidence",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/crystal-tigers-eye.jpg",
+    "description": "A premium plush bag charm from the Crystal Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "crystal-amazonite",
+    "name": "Amazonite Orbit",
+    "shortName": "Amazonite",
+    "collection": "crystal",
+    "tagline": "Calm and communicate",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/crystal-amazonite.jpg",
+    "description": "A premium plush bag charm from the Crystal Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "crystal-pyrite",
+    "name": "Pyrite Orbit",
+    "shortName": "Pyrite",
+    "collection": "crystal",
+    "tagline": "Spark bold action",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/crystal-pyrite.jpg",
+    "description": "A premium plush bag charm from the Crystal Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "manifestation-abundance",
+    "name": "Abundance Orbit",
+    "shortName": "Abundance",
+    "collection": "manifestation",
+    "tagline": "Attract wealth",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/manifestation-abundance.jpg",
+    "description": "A premium plush bag charm from the Manifestation Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "manifestation-love",
+    "name": "Love Orbit",
+    "shortName": "Love",
+    "collection": "manifestation",
+    "tagline": "Call in love",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/manifestation-love.jpg",
+    "description": "A premium plush bag charm from the Manifestation Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "manifestation-luck",
+    "name": "Luck Orbit",
+    "shortName": "Luck",
+    "collection": "manifestation",
+    "tagline": "Invite good fortune",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/manifestation-luck.jpg",
+    "description": "A premium plush bag charm from the Manifestation Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "manifestation-protection",
+    "name": "Protection Orbit",
+    "shortName": "Protection",
+    "collection": "manifestation",
+    "tagline": "Guard your energy",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/manifestation-protection.jpg",
+    "description": "A premium plush bag charm from the Manifestation Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "manifestation-peace",
+    "name": "Peace Orbit",
+    "shortName": "Peace",
+    "collection": "manifestation",
+    "tagline": "Choose calm",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/manifestation-peace.jpg",
+    "description": "A premium plush bag charm from the Manifestation Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "manifestation-healing",
+    "name": "Healing Orbit",
+    "shortName": "Healing",
+    "collection": "manifestation",
+    "tagline": "Restore gently",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/manifestation-healing.jpg",
+    "description": "A premium plush bag charm from the Manifestation Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "manifestation-confidence",
+    "name": "Confidence Orbit",
+    "shortName": "Confidence",
+    "collection": "manifestation",
+    "tagline": "Own your power",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/manifestation-confidence.jpg",
+    "description": "A premium plush bag charm from the Manifestation Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "manifestation-success",
+    "name": "Success Orbit",
+    "shortName": "Success",
+    "collection": "manifestation",
+    "tagline": "Step into success",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/manifestation-success.jpg",
+    "description": "A premium plush bag charm from the Manifestation Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "manifestation-clarity",
+    "name": "Clarity Orbit",
+    "shortName": "Clarity",
+    "collection": "manifestation",
+    "tagline": "See your path",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/manifestation-clarity.jpg",
+    "description": "A premium plush bag charm from the Manifestation Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "manifestation-joy",
+    "name": "Joy Orbit",
+    "shortName": "Joy",
+    "collection": "manifestation",
+    "tagline": "Raise your vibration",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/manifestation-joy.jpg",
+    "description": "A premium plush bag charm from the Manifestation Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "manifestation-dreams",
+    "name": "Dreams Orbit",
+    "shortName": "Dreams",
+    "collection": "manifestation",
+    "tagline": "Manifest your vision",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/manifestation-dreams.jpg",
+    "description": "A premium plush bag charm from the Manifestation Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "manifestation-alignment",
+    "name": "Alignment Orbit",
+    "shortName": "Alignment",
+    "collection": "manifestation",
+    "tagline": "Flow with purpose",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/manifestation-alignment.jpg",
+    "description": "A premium plush bag charm from the Manifestation Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "zodiac-aries",
+    "name": "Aries Orbit",
+    "shortName": "Aries",
+    "collection": "zodiac",
+    "tagline": "Mar 21 \u2013 Apr 19",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/zodiac-aries.jpg",
+    "description": "A premium plush bag charm from the Zodiac Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "zodiac-taurus",
+    "name": "Taurus Orbit",
+    "shortName": "Taurus",
+    "collection": "zodiac",
+    "tagline": "Apr 20 \u2013 May 20",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/zodiac-taurus.jpg",
+    "description": "A premium plush bag charm from the Zodiac Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "zodiac-gemini",
+    "name": "Gemini Orbit",
+    "shortName": "Gemini",
+    "collection": "zodiac",
+    "tagline": "May 21 \u2013 Jun 20",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/zodiac-gemini.jpg",
+    "description": "A premium plush bag charm from the Zodiac Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "zodiac-cancer",
+    "name": "Cancer Orbit",
+    "shortName": "Cancer",
+    "collection": "zodiac",
+    "tagline": "Jun 21 \u2013 Jul 22",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/zodiac-cancer.jpg",
+    "description": "A premium plush bag charm from the Zodiac Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "zodiac-leo",
+    "name": "Leo Orbit",
+    "shortName": "Leo",
+    "collection": "zodiac",
+    "tagline": "Jul 23 \u2013 Aug 22",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/zodiac-leo.jpg",
+    "description": "A premium plush bag charm from the Zodiac Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "zodiac-virgo",
+    "name": "Virgo Orbit",
+    "shortName": "Virgo",
+    "collection": "zodiac",
+    "tagline": "Aug 23 \u2013 Sep 22",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/zodiac-virgo.jpg",
+    "description": "A premium plush bag charm from the Zodiac Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "zodiac-libra",
+    "name": "Libra Orbit",
+    "shortName": "Libra",
+    "collection": "zodiac",
+    "tagline": "Sep 23 \u2013 Oct 22",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/zodiac-libra.jpg",
+    "description": "A premium plush bag charm from the Zodiac Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "zodiac-scorpio",
+    "name": "Scorpio Orbit",
+    "shortName": "Scorpio",
+    "collection": "zodiac",
+    "tagline": "Oct 23 \u2013 Nov 21",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/zodiac-scorpio.jpg",
+    "description": "A premium plush bag charm from the Zodiac Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "zodiac-sagittarius",
+    "name": "Sagittarius Orbit",
+    "shortName": "Sagittarius",
+    "collection": "zodiac",
+    "tagline": "Nov 22 \u2013 Dec 21",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/zodiac-sagittarius.jpg",
+    "description": "A premium plush bag charm from the Zodiac Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "zodiac-capricorn",
+    "name": "Capricorn Orbit",
+    "shortName": "Capricorn",
+    "collection": "zodiac",
+    "tagline": "Dec 22 \u2013 Jan 19",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/zodiac-capricorn.jpg",
+    "description": "A premium plush bag charm from the Zodiac Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "zodiac-aquarius",
+    "name": "Aquarius Orbit",
+    "shortName": "Aquarius",
+    "collection": "zodiac",
+    "tagline": "Jan 20 \u2013 Feb 18",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/zodiac-aquarius.jpg",
+    "description": "A premium plush bag charm from the Zodiac Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  },
+  {
+    "id": "zodiac-pisces",
+    "name": "Pisces Orbit",
+    "shortName": "Pisces",
+    "collection": "zodiac",
+    "tagline": "Feb 19 \u2013 Mar 20",
+    "price": 2999,
+    "currency": "NZD",
+    "image": "assets/products/zodiac-pisces.jpg",
+    "description": "A premium plush bag charm from the Zodiac Collection, finished with embroidered details and gold-tone hardware.",
+    "features": [
+      "Premium plush",
+      "Embroidered details",
+      "Gold-tone hardware",
+      "Collectible Orbit charm"
+    ]
+  }
+]

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orbit Plush Charms</title>
+  <meta name="description" content="Collect your Orbit. Premium plush bag charms designed around personality, purpose and possibility.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home">
+      <span class="brand-mark">✦</span>
+      <span>ORBIT</span>
+    </a>
+    <nav>
+      <a href="#shop">Shop all</a>
+      <a href="#collection/crystal">Crystal</a>
+      <a href="#collection/manifestation">Manifestation</a>
+      <a href="#collection/zodiac">Zodiac</a>
+    </nav>
+    <button class="cart-button" id="cartButton" aria-label="Open cart">
+      Bag <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main id="app"></main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-head">
+      <div>
+        <p class="eyebrow">Your selection</p>
+        <h2>Orbit Bag</h2>
+      </div>
+      <button id="closeCart" class="icon-button" aria-label="Close cart">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="subtotal"><span>Subtotal</span><strong id="subtotal">$0.00 NZD</strong></div>
+      <button class="primary wide" id="checkoutButton">Proceed to checkout</button>
+      <p class="fineprint">Checkout is currently configured as a safe demonstration. Connect Stripe, Shopify or another payment provider before taking live orders.</p>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <footer>
+    <div>
+      <span class="brand footer-brand">✦ ORBIT</span>
+      <p>Your signature collection.</p>
+    </div>
+    <div>
+      <p>Premium plush · Embroidered details · Gold-tone hardware</p>
+      <p>Designed by Eden Toy Co.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
