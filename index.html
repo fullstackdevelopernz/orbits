@@ -11,6 +11,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/branding/etc-favicon.svg">
   <link rel="apple-touch-icon" href="assets/branding/eden-toy-co-logo.png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="eden-experience.css">
 </head>
 <body>
   <header class="site-header">
@@ -23,9 +24,7 @@
       <a href="#collection/manifestation">Manifestation</a>
       <a href="#collection/zodiac">Zodiac</a>
     </nav>
-    <button class="cart-button" id="cartButton" aria-label="Open bag">
-      Bag <span id="cartCount">0</span>
-    </button>
+    <button class="cart-button" id="cartButton" aria-label="Open bag">Bag <span id="cartCount">0</span></button>
   </header>
 
   <main id="app">
@@ -37,11 +36,7 @@
 
   <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
     <div class="cart-head">
-      <div>
-        <p class="eyebrow">Eden Toy Co.</p>
-        <h2>Your Orbit Bag</h2>
-        <p class="cart-subbrand">Soft plush charm picks, ready for checkout.</p>
-      </div>
+      <div><p class="eyebrow">Eden Toy Co.</p><h2>Your Orbit Bag</h2><p class="cart-subbrand">Soft plush charm picks, ready for checkout.</p></div>
       <button id="closeCart" class="icon-button" aria-label="Close cart">×</button>
     </div>
     <div id="cartItems" class="cart-items"></div>
@@ -58,18 +53,8 @@
       <img class="footer-logo" src="assets/branding/eden-toy-co-logo.png" alt="Eden Toy Co.">
       <p>Playful, premium plush accessories designed to be clipped on, collected and gifted.</p>
     </div>
-    <div>
-      <h3 class="footer-title">Shop</h3>
-      <p><a href="#shop">All Orbits</a></p>
-      <p><a href="#collection/crystal">Crystal Collection</a></p>
-      <p><a href="#collection/manifestation">Manifestation Collection</a></p>
-      <p><a href="#collection/zodiac">Zodiac Collection</a></p>
-    </div>
-    <div>
-      <h3 class="footer-title">Brand</h3>
-      <p>Orbits are a signature Eden Toy Co. product line.</p>
-      <p>Premium plush · Gold-tone hardware · Giftable collectibles</p>
-    </div>
+    <div><h3 class="footer-title">Shop</h3><p><a href="#shop">All Orbits</a></p><p><a href="#collection/crystal">Crystal Collection</a></p><p><a href="#collection/manifestation">Manifestation Collection</a></p><p><a href="#collection/zodiac">Zodiac Collection</a></p></div>
+    <div><h3 class="footer-title">Brand</h3><p>Orbits are a signature Eden Toy Co. product line.</p><p>Premium plush · Gold-tone hardware · Giftable collectibles</p></div>
   </footer>
 
   <script src="app.js"></script>
