@@ -37,6 +37,10 @@ function render(){
   window.scrollTo({top:0, behavior:'instant'});
 }
 
+function orbitCharmLabel(extraClass=''){
+  return `<span class="orbit-charm-label ${extraClass}" aria-label="Orbits"><span class="orbit-charm-ring"></span><span class="orbit-charm-body">ORBITS</span></span>`;
+}
+
 function collectionItems(key, limit=8){
   return products.filter(p=>p.collection===key).slice(0,limit);
 }
@@ -47,7 +51,7 @@ function collectionPreview(key, context='card'){
   return `<div class="collection-preview collection-preview-${context} ${key}">
     <div class="preview-topline"><span>${meta.title} Collection</span><span>12 plush bag charms</span></div>
     <div class="preview-grid">${items.map((p,i)=>`<div class="preview-toy preview-toy-${i+1}"><img src="${p.image}" alt="${p.name}"><span>${p.name.replace(' Orbit','')}</span></div>`).join('')}</div>
-    <img class="preview-orbit-icon" src="assets/branding/orbit-icon.svg" alt="Orbit">
+    ${orbitCharmLabel('preview-orbit-charm')}
   </div>`;
 }
 
@@ -94,7 +98,6 @@ function homeTemplate(){
 function collectionCard(key){
   const meta=collectionMeta(key);
   return `<a class="collection-card brand-collection-card ${key}" href="#collection/${key}">
-    <div class="collection-number">0${key==='crystal'?1:key==='manifestation'?2:3}</div>
     <div class="collection-chip">12 Orbits</div>
     ${collectionPreview(key,'card')}
     <div class="collection-copy">
