@@ -1,0 +1,131 @@
+:root{
+  --eden-grey:#777a7d;
+  --eden-grey-dark:#53565a;
+  --eden-grey-light:#a9acae;
+  --eden-charcoal:#242629;
+}
+
+.eden-brand{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  padding:3px 4px;
+}
+
+.eden-stamp{
+  position:relative;
+  display:grid;
+  grid-template-columns:auto auto;
+  align-items:end;
+  gap:8px;
+  padding:10px 15px 9px;
+  min-width:176px;
+  border:2px solid rgba(79,82,85,.82);
+  background:linear-gradient(160deg,#a7aaac 0%,#878a8d 44%,#6f7275 100%);
+  color:#f3f3f1;
+  transform:rotate(-3deg);
+  transform-origin:center;
+  box-shadow:
+    inset 1px 1px 0 rgba(255,255,255,.32),
+    inset -2px -2px 0 rgba(35,37,39,.26),
+    0 7px 0 rgba(67,69,72,.12);
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.26),
+    0 -1px 0 rgba(37,39,41,.48);
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+
+.eden-stamp:before,
+.eden-stamp:after{
+  content:"";
+  position:absolute;
+  inset:4px;
+  pointer-events:none;
+  border:1px solid rgba(255,255,255,.16);
+}
+
+.eden-stamp:after{
+  inset:auto 11px 5px;
+  height:2px;
+  border:0;
+  background:rgba(38,40,42,.28);
+  box-shadow:0 1px 0 rgba(255,255,255,.16);
+}
+
+.eden-brand:hover .eden-stamp{
+  transform:rotate(-1deg) translateY(-1px);
+  box-shadow:
+    inset 1px 1px 0 rgba(255,255,255,.38),
+    inset -2px -2px 0 rgba(35,37,39,.3),
+    0 9px 0 rgba(67,69,72,.13);
+}
+
+.eden-name{
+  font-family:"Archivo Black",Impact,sans-serif;
+  font-size:28px;
+  line-height:.85;
+  letter-spacing:-.055em;
+}
+
+.eden-toy{
+  font-family:Manrope,Arial,sans-serif;
+  font-size:9px;
+  line-height:1;
+  font-weight:800;
+  letter-spacing:.18em;
+  padding-bottom:2px;
+  white-space:nowrap;
+}
+
+.site-header{
+  background:linear-gradient(180deg,rgba(242,241,237,.97),rgba(229,228,223,.94));
+  border-bottom:1px solid rgba(82,84,87,.18);
+}
+
+.site-header nav a{
+  color:#36383b;
+}
+
+.site-header nav a:after{
+  background:var(--eden-grey-dark);
+}
+
+.site-header nav a:hover{
+  color:#151617;
+}
+
+.eden-footer{
+  background:linear-gradient(145deg,#25272a,#3c3f43);
+}
+
+.eden-brand-footer .eden-stamp{
+  background:linear-gradient(160deg,#b3b5b7,#8d9093 48%,#6f7275);
+  border-color:rgba(225,226,227,.52);
+}
+
+.eden-footer .footer-brand-block p{
+  color:#d3d4d5;
+}
+
+.eden-footer .footer-links h4{
+  color:#c3c5c7;
+}
+
+.eden-footer .footer-links a,
+.eden-footer .footer-links span{
+  color:#e0e1e2;
+}
+
+.eden-footer .footer-bottom{
+  color:#bfc1c3;
+}
+
+@media(max-width:760px){
+  .eden-stamp{
+    min-width:148px;
+    padding:9px 12px 8px;
+    gap:6px;
+  }
+  .eden-name{font-size:23px}
+  .eden-toy{font-size:7px}
+}
