@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Orbit Plush Charms</title>
+  <title>Orbit by Eden Toy Co.</title>
   <meta name="description" content="Collect your Orbit. Premium plush bag charms designed around personality, purpose and possibility.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,11 +12,21 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#home">
-      <span class="brand-mark">✦</span>
-      <span>ORBIT</span>
+    <a class="brand" href="#home" aria-label="Orbit home">
+      <span class="brand-symbol" aria-hidden="true">
+        <svg viewBox="0 0 64 64" role="img">
+          <circle cx="32" cy="32" r="24"></circle>
+          <ellipse cx="32" cy="32" rx="29" ry="12"></ellipse>
+          <circle class="brand-orbit-dot" cx="55" cy="28" r="4"></circle>
+          <path d="M27 25c3-5 12-5 15 0 3 6-2 13-7.5 17C29 38 24 31 27 25Z"></path>
+        </svg>
+      </span>
+      <span class="brand-wordmark">
+        <strong>ORBIT</strong>
+        <small>BY EDEN TOY CO.</small>
+      </span>
     </a>
-    <nav>
+    <nav aria-label="Primary navigation">
       <a href="#shop">Shop all</a>
       <a href="#collection/crystal">Crystal</a>
       <a href="#collection/manifestation">Manifestation</a>
@@ -46,15 +56,28 @@
   </aside>
   <div class="overlay" id="overlay"></div>
 
-  <footer>
-    <div>
-      <span class="brand footer-brand">✦ ORBIT</span>
-      <p>Your signature collection.</p>
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand-block">
+        <a class="brand brand-footer" href="#home">
+          <span class="brand-symbol" aria-hidden="true">
+            <svg viewBox="0 0 64 64">
+              <circle cx="32" cy="32" r="24"></circle>
+              <ellipse cx="32" cy="32" rx="29" ry="12"></ellipse>
+              <circle class="brand-orbit-dot" cx="55" cy="28" r="4"></circle>
+              <path d="M27 25c3-5 12-5 15 0 3 6-2 13-7.5 17C29 38 24 31 27 25Z"></path>
+            </svg>
+          </span>
+          <span class="brand-wordmark"><strong>ORBIT</strong><small>BY EDEN TOY CO.</small></span>
+        </a>
+        <p>Collectible plush companions made to carry meaning, personality and a little magic.</p>
+      </div>
+      <div class="footer-links">
+        <div><h4>Shop</h4><a href="#shop">All Orbits</a><a href="#collection/crystal">Crystal</a><a href="#collection/manifestation">Manifestation</a><a href="#collection/zodiac">Zodiac</a></div>
+        <div><h4>About</h4><span>Premium plush</span><span>Embroidered details</span><span>Gold-tone hardware</span><span>Designed by Eden Toy Co.</span></div>
+      </div>
     </div>
-    <div>
-      <p>Premium plush · Embroidered details · Gold-tone hardware</p>
-      <p>Designed by Eden Toy Co.</p>
-    </div>
+    <div class="footer-bottom"><span>© 2026 Eden Toy Co.</span><span>Your signature collection.</span></div>
   </footer>
 
   <script src="app.js"></script>
