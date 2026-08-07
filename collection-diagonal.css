@@ -67,6 +67,13 @@
   filter:drop-shadow(0 0 8px rgba(255,255,255,.38));
 }
 
+/* Hero carousel uses dots/swipe only; directional arrows are intentionally removed. */
+.carousel-arrow,
+.carousel-prev,
+.carousel-next{
+  display:none!important;
+}
+
 /* Tablet/mobile: stop treating the desktop diagonal as a fixed-height composition.
    Copy owns its natural height, artwork follows it, and the CTA stays inside the copy block. */
 @media(max-width:900px){
