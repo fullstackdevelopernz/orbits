@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="collection-diagonal.css">
   <link rel="stylesheet" href="account-auth.css">
   <link rel="stylesheet" href="customer-messages.css">
+  <link rel="stylesheet" href="customer-orders.css">
   <link rel="stylesheet" href="paypal-checkout.css">
 </head>
 <body>
@@ -38,30 +39,13 @@
   </main>
 
   <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
-    <div class="cart-head">
-      <div>
-        <img class="cart-orbits-logo" src="assets/branding/orbits-logo.png" alt="ORBITS">
-        <h2>Your Preorder Bag</h2>
-        <p class="cart-subbrand">Your favourite first-release Orbits, all in one place.</p>
-      </div>
-      <button id="closeCart" class="icon-button" aria-label="Close cart">×</button>
-    </div>
+    <div class="cart-head"><div><img class="cart-orbits-logo" src="assets/branding/orbits-logo.png" alt="ORBITS"><h2>Your Preorder Bag</h2><p class="cart-subbrand">Your favourite first-release Orbits, all in one place.</p></div><button id="closeCart" class="icon-button" aria-label="Close cart">×</button></div>
     <div id="cartItems" class="cart-items"></div>
-    <div class="cart-footer">
-      <div class="subtotal"><span>Subtotal</span><strong id="subtotal">$0.00 NZD</strong></div>
-      <button class="primary wide" id="checkoutButton">Continue preorder</button>
-      <p class="fineprint">Choose Pay by Bank with BlinkPay or PayPal at secure checkout.</p>
-    </div>
+    <div class="cart-footer"><div class="subtotal"><span>Subtotal</span><strong id="subtotal">$0.00 NZD</strong></div><button class="primary wide" id="checkoutButton">Continue preorder</button><p class="fineprint">Choose Pay by Bank with BlinkPay or PayPal at secure checkout.</p></div>
   </aside>
   <div class="overlay" id="overlay"></div>
 
-  <footer class="site-footer compact-footer">
-    <div class="compact-footer-inner">
-      <span class="compact-footer-distributor">Distributed by Eden Toy Co.</span>
-      <a class="compact-footer-email-button" href="mailto:orders@edentoyco.com">orders@edentoyco.com</a>
-      <a class="footer-wordmark compact-footer-logo" href="#home" aria-label="ORBITS home">orbits</a>
-    </div>
-  </footer>
+  <footer class="site-footer compact-footer"><div class="compact-footer-inner"><span class="compact-footer-distributor">Distributed by Eden Toy Co.</span><a class="compact-footer-email-button" href="mailto:orders@edentoyco.com">orders@edentoyco.com</a><a class="footer-wordmark compact-footer-logo" href="#home" aria-label="ORBITS home">orbits</a></div></footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
@@ -69,6 +53,7 @@
   <script src="auth.js"></script>
   <script src="customer-session.js"></script>
   <script src="customer-messages.js"></script>
+  <script src="customer-orders.js"></script>
   <script src="paypal-checkout.js"></script>
   <script src="payment-health.js"></script>
 </body>
