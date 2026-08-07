@@ -7,24 +7,31 @@
   <meta name="description" content="ORBITS by Eden Toy Co. — playful premium plush bag charms made to clip on, collect and gift.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/branding/orbits-logo.png">
   <link rel="apple-touch-icon" href="assets/branding/orbits-logo.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="eden-experience.css">
+  <link rel="stylesheet" href="pop-art.css">
 </head>
 <body>
+  <div class="announcement-bar">36 Orbits. 3 worlds. One very collectible universe.</div>
+
   <header class="site-header">
     <a class="brand orbit-brand" href="#home" aria-label="ORBITS home">
       <img class="orbits-site-logo header-orbits-logo" src="assets/branding/orbits-logo.png" alt="ORBITS">
     </a>
     <nav>
-      <a href="#shop">Shop Orbits</a>
+      <a href="#shop">Shop</a>
       <a href="#collection/crystal">Crystal</a>
       <a href="#collection/manifestation">Manifestation</a>
       <a href="#collection/zodiac">Zodiac</a>
     </nav>
-    <button class="cart-button" id="cartButton" aria-label="Open bag">Bag <span id="cartCount">0</span></button>
+    <div class="header-actions">
+      <a class="header-link" href="#search">Search</a>
+      <a class="header-link" href="#account">Account</a>
+      <button class="cart-button" id="cartButton" aria-label="Open bag">Bag <span id="cartCount">0</span></button>
+    </div>
   </header>
 
   <main id="app">
@@ -47,7 +54,7 @@
     <div class="cart-footer">
       <div class="subtotal"><span>Subtotal</span><strong id="subtotal">$0.00 NZD</strong></div>
       <button class="primary wide" id="checkoutButton">Proceed to checkout</button>
-      <p class="fineprint">Checkout is currently configured as a safe demonstration. Connect a payment provider before taking live orders.</p>
+      <p class="fineprint">Prototype checkout only. No payment will be taken until a live provider is connected.</p>
     </div>
   </aside>
   <div class="overlay" id="overlay"></div>
@@ -65,8 +72,10 @@
       <p><a href="#collection/zodiac">Zodiac Collection</a></p>
     </div>
     <div>
-      <h3 class="footer-title">ORBITS</h3>
-      <p>A signature Eden Toy Co. collection.</p>
+      <h3 class="footer-title">Explore</h3>
+      <p><a href="#search">Search</a></p>
+      <p><a href="#account">Account</a></p>
+      <p><a href="#bag">Bag</a></p>
       <p>Premium plush · Embroidered details · Gold-tone hardware</p>
     </div>
   </footer>
