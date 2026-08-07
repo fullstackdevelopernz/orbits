@@ -1,0 +1,27 @@
+/* Eden Toy Co live customer account */
+.eden-account-shell{padding-top:clamp(88px,10vw,138px);padding-bottom:clamp(54px,7vw,90px);background:linear-gradient(180deg,#f9f4ff 0%,#fff8ef 100%)}
+.eden-account-layout{width:min(1180px,calc(100% - 32px));margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,.82fr);gap:clamp(30px,6vw,84px);align-items:center}
+.eden-account-intro{padding:clamp(12px,3vw,28px)}
+.eden-account-intro h1{margin:.35rem 0 1rem;max-width:10ch;font-size:clamp(48px,7vw,92px);line-height:.9;letter-spacing:-.065em;color:#252033;font-weight:900}
+.eden-account-intro p{max-width:620px;font-size:clamp(16px,1.5vw,20px);line-height:1.55;color:#5d5369;font-weight:650}
+.eden-account-points{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.eden-account-points span,.eden-account-status{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;background:#fff;color:#342a48;font-size:11px;font-weight:900;box-shadow:0 10px 30px rgba(89,55,112,.08)}
+.eden-account-status span{width:9px;height:9px;border-radius:50%;background:#3fd19d}
+.eden-auth-card{padding:clamp(24px,4vw,40px)!important;border:1px solid rgba(80,55,110,.08)!important;border-radius:28px!important;background:rgba(255,255,255,.92)!important;box-shadow:0 22px 60px rgba(75,48,95,.12)!important}
+.eden-auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:22px;padding:5px;border-radius:999px;background:#eee9f6}
+.eden-auth-tabs button{border:0;background:transparent;border-radius:999px;padding:11px 14px;font:inherit;font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#6d6476;cursor:pointer}
+.eden-auth-tabs button.active{background:#1648a6;color:#fff;box-shadow:0 8px 20px rgba(22,72,166,.2)}
+.eden-auth-form{display:grid;gap:16px}
+.eden-auth-form[hidden]{display:none!important}
+.eden-auth-form .form-field{margin:0}
+.eden-check{display:flex;align-items:flex-start;gap:10px;color:#5f5768;font-size:12px;line-height:1.45;font-weight:700;cursor:pointer}
+.eden-check input{margin-top:3px;accent-color:#ff2f86}
+.eden-text-button{justify-self:start;padding:0;border:0;background:transparent;color:#1648a6;font:inherit;font-size:12px;font-weight:900;cursor:pointer}
+.eden-auth-message{min-height:20px;margin:0 0 12px;font-size:12px;line-height:1.45;font-weight:800;color:#5d5369}
+.eden-auth-message[data-tone="error"]{color:#ba2f52}
+.eden-auth-message[data-tone="success"]{color:#177b5f}
+.eden-account-email{margin-bottom:20px;padding:12px 15px;border-radius:14px;background:#f4f0fa;color:#342a48;font-size:14px;font-weight:900;overflow-wrap:anywhere}
+.eden-reset-card{width:min(560px,calc(100% - 32px));margin:0 auto}
+.eden-reset-card h1{margin:.35rem 0 1.4rem;font-size:clamp(38px,5vw,60px);line-height:.95;letter-spacing:-.055em}
+@media(max-width:900px){.eden-account-layout{grid-template-columns:1fr}.eden-account-intro h1{max-width:12ch}.eden-account-intro{padding:0}.eden-account-shell{padding-top:94px}}
+@media(max-width:620px){.eden-account-layout{width:min(100% - 24px,1180px);gap:24px}.eden-auth-card{padding:22px!important;border-radius:22px!important}.eden-account-intro h1{font-size:clamp(44px,14vw,64px)}.eden-account-points{display:grid}.eden-account-points span{justify-content:flex-start}}
