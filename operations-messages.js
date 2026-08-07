@@ -6,7 +6,7 @@
     const section=document.querySelector('[data-admin-section="messages"]');
     if(!section||section.dataset.messagingReady==='1'||typeof edenSupabase==='undefined')return;
     section.dataset.messagingReady='loading';
-    const {data,error}=await edenSupabase.from('eden_customer_messages').select('id,thread_id,customer_id,order_id,direction,subject,body,status,sender_user_id,created_at').order('created_at',{ascending:true}).limit(1000);
+    const {data,error}=await edenSupabase.from('eden_customer_messages').select('id,thread_id,customer_id,customer_email,order_id,direction,subject,body,status,sender_user_id,created_at').order('created_at',{ascending:true}).limit(1000);
     if(error){section.dataset.messagingReady='';return;}
     const threadGroups=groups(data||[]);
     const awaiting=threadGroups.filter(t=>t.last.status==='awaiting_staff').length;
@@ -15,7 +15,8 @@
   }
   function threadCard(t){
     const closed=t.last.status==='closed';
-    return `<details class="eden-ops-thread" data-ops-thread="${esc(t.id)}"><summary><div><strong>${esc(t.first.subject||'Customer message')}</strong><small>${t.first.order_id?'Order linked · ':''}${fmt(t.last.created_at)}</small></div><span class="eden-admin-status ${esc(t.last.status)}">${esc(String(t.last.status).replaceAll('_',' '))}</span></summary><div class="eden-ops-thread-body">${t.items.map(m=>`<article class="eden-ops-message-bubble ${m.direction==='store_to_customer'?'staff':'customer'}"><div><strong>${m.direction==='store_to_customer'?'Eden Toy Co':'Customer'}</strong><time>${fmt(m.created_at)}</time></div><p>${esc(m.body)}</p></article>`).join('')}${closed?'<p class="eden-ops-thread-closed">Conversation closed.</p>':`<form class="eden-ops-reply-form" data-ops-reply="${esc(t.id)}"><textarea name="body" rows="4" maxlength="5000" required placeholder="Reply to customer"></textarea><div><button type="submit">Send reply</button><button class="eden-ops-secondary" type="button" data-close-thread="${esc(t.id)}">Close conversation</button></div></form>`}</div></details>`;
+    const identity=t.first.customer_email||t.first.customer_id||'Customer';
+    return `<details class="eden-ops-thread" data-ops-thread="${esc(t.id)}"><summary><div><strong>${esc(t.first.subject||'Customer message')}</strong><small>${esc(identity)} · ${t.first.order_id?'Order linked · ':''}${fmt(t.last.created_at)}</small></div><span class="eden-admin-status ${esc(t.last.status)}">${esc(String(t.last.status).replaceAll('_',' '))}</span></summary><div class="eden-ops-thread-body">${t.items.map(m=>`<article class="eden-ops-message-bubble ${m.direction==='store_to_customer'?'staff':'customer'}"><div><strong>${m.direction==='store_to_customer'?'Eden Toy Co':esc(identity)}</strong><time>${fmt(m.created_at)}</time></div><p>${esc(m.body)}</p></article>`).join('')}${closed?'<p class="eden-ops-thread-closed">Conversation closed.</p>':`<form class="eden-ops-reply-form" data-ops-reply="${esc(t.id)}"><textarea name="body" rows="4" maxlength="5000" required placeholder="Reply to customer"></textarea><div><button type="submit">Send reply</button><button class="eden-ops-secondary" type="button" data-close-thread="${esc(t.id)}">Close conversation</button></div></form>`}</div></details>`;
   }
   function notice(text,tone='info'){const el=document.getElementById('edenOpsMessageNotice');if(el){el.textContent=text||'';el.dataset.tone=tone;}}
   function bindOpsMessages(section){
