@@ -37,21 +37,13 @@ function render(){
   window.scrollTo({top:0, behavior:'instant'});
 }
 
-function orbitCharmLabel(extraClass=''){
-  return `<span class="orbit-charm-label ${extraClass}" aria-label="Orbits"><span class="orbit-charm-ring"></span><span class="orbit-charm-body">ORBITS</span></span>`;
-}
-
-function collectionItems(key, limit=8){
-  return products.filter(p=>p.collection===key).slice(0,limit);
-}
-
 function collectionPreview(key, context='card'){
-  const items = collectionItems(key, context==='hero'?9:6);
   const meta = collectionMeta(key);
   return `<div class="collection-preview collection-preview-${context} ${key}">
-    <div class="preview-topline"><span>${meta.title} Collection</span><span>12 plush bag charms</span></div>
-    <div class="preview-grid">${items.map((p,i)=>`<div class="preview-toy preview-toy-${i+1}"><img src="${p.image}" alt="${p.name}"><span>${p.name.replace(' Orbit','')}</span></div>`).join('')}</div>
-    ${orbitCharmLabel('preview-orbit-charm')}
+    <img class="collection-art" src="assets/${key}-collection.png" alt="${meta.title} Orbit collection">
+    <span class="collection-brand-sticker" aria-label="ORBITS branded collection">
+      <img src="assets/branding/orbits-logo.svg" alt="ORBITS">
+    </span>
   </div>`;
 }
 
@@ -59,15 +51,15 @@ function homeTemplate(){
   return `
   <section class="hero hero-reimagined">
     <div class="hero-copy">
-      <img class="hero-master-logo" src="assets/branding/eden-toy-co-logo.png" alt="Eden Toy Co.">
-      <p class="hero-kicker">Meet Orbits</p>
+      <img class="hero-master-logo" src="assets/branding/orbits-logo.svg" alt="ORBITS">
+      <p class="hero-kicker">By Eden Toy Co.</p>
       <h1>Little plush personalities for bags, keys and everyday magic.</h1>
-      <p class="hero-intro">Collect the feeling that fits you. Each Eden Toy Co. Orbit is soft, giftable and made to bring a little joy wherever it goes.</p>
+      <p class="hero-intro">Choose the feeling that fits you. Every Orbit is soft, expressive, giftable and made to bring a little joy wherever it goes.</p>
       <div class="hero-actions">
         <a class="primary" href="#shop">Shop all Orbits</a>
         <a class="secondary" href="#collection/manifestation">Meet the collections</a>
       </div>
-      <div class="hero-proof"><span><strong>36</strong> characters</span><span><strong>3</strong> worlds</span><span><strong>1</strong> joyful collection</span></div>
+      <div class="hero-proof"><span><strong>36</strong> characters</span><span><strong>3</strong> collections</span><span><strong>1</strong> playful world</span></div>
     </div>
     <div class="hero-showcase">
       <div class="spark spark-a">✦</div><div class="spark spark-b">✦</div><div class="spark spark-c">✦</div>
@@ -80,8 +72,8 @@ function homeTemplate(){
   </section>
   <section class="section collections-section">
     <div class="section-heading brand-heading">
-      <div><p class="eyebrow">Three ways to collect</p><h2>Choose your Orbit world</h2></div>
-      <p>Each world has its own mood, palette and personality — designed as part of one unmistakable Eden Toy Co. family.</p>
+      <div><p class="eyebrow">Choose your collection</p><h2>Find the Orbit that feels like you.</h2></div>
+      <p>Crystal, Manifestation and Zodiac each have their own mood, colour and personality — all unmistakably ORBITS.</p>
     </div>
     <div class="collection-grid collection-grid-brand">
       ${collectionCard('crystal')}
@@ -89,8 +81,8 @@ function homeTemplate(){
       ${collectionCard('zodiac')}
     </div>
   </section>
-  <section class="shop-shell">
-    <div class="section-heading"><div><p class="eyebrow">Featured Orbits</p><h2>Start with a favourite</h2></div></div>
+  <section class="shop-shell featured-shop">
+    <div class="section-heading"><div><p class="eyebrow">Featured Orbits</p><h2>Start with a favourite.</h2></div><a class="text-link" href="#shop">Shop all 36 →</a></div>
     ${productGrid(products.slice(0,8))}
   </section>`;
 }
@@ -98,7 +90,6 @@ function homeTemplate(){
 function collectionCard(key){
   const meta=collectionMeta(key);
   return `<a class="collection-card brand-collection-card ${key}" href="#collection/${key}">
-    <div class="collection-chip">12 Orbits</div>
     ${collectionPreview(key,'card')}
     <div class="collection-copy">
       <p class="collection-kicker">${meta.kicker}</p>
@@ -110,25 +101,25 @@ function collectionCard(key){
 }
 
 function shopTemplate(items,title){
- return `<section class="shop-shell"><div class="shop-top"><div><p class="eyebrow">Eden Toy Co. range</p><h2>${title}</h2></div><div class="filters"><button class="filter active" data-filter="all">All 36</button><button class="filter" data-filter="crystal">Crystal</button><button class="filter" data-filter="manifestation">Manifestation</button><button class="filter" data-filter="zodiac">Zodiac</button></div></div><div id="gridWrap">${productGrid(items)}</div></section>`;
+ return `<section class="shop-shell"><div class="shop-top"><div><p class="eyebrow">ORBITS by Eden Toy Co.</p><h2>${title}</h2></div><div class="filters"><button class="filter active" data-filter="all">All 36</button><button class="filter" data-filter="crystal">Crystal</button><button class="filter" data-filter="manifestation">Manifestation</button><button class="filter" data-filter="zodiac">Zodiac</button></div></div><div id="gridWrap">${productGrid(items)}</div></section>`;
 }
 
 function collectionTemplate(key,items){
- return `<section class="collection-hero collection-hero-brand"><div><p class="eyebrow">Eden Toy Co. · 12 collectible Orbits</p><h1>${collectionTitle(key)}</h1><p>${collectionCopy(key)}</p><a class="primary" href="#shop">Shop all Orbits</a></div>${collectionPreview(key,'detail')}</section><section class="shop-shell">${productGrid(items)}</section>`;
+ return `<section class="collection-hero collection-hero-brand"><div><p class="eyebrow">ORBITS · 12 collectible charms</p><h1>${collectionTitle(key)}</h1><p>${collectionCopy(key)}</p><a class="primary" href="#shop">Shop all Orbits</a></div>${collectionPreview(key,'detail')}</section><section class="shop-shell">${productGrid(items)}</section>`;
 }
 
 function collectionCopy(key){ return {crystal:'Twelve crystal-inspired companions, each matched to a distinct intention and finished with signature gold-tone hardware.',manifestation:'Twelve plush symbols of abundance, love, luck, protection, peace, healing, confidence, success, clarity, joy, dreams and alignment.',zodiac:'Twelve character-led plush charms, one for every sign of the zodiac.'}[key]; }
 function productGrid(items){ return `<div class="product-grid">${items.map(productCard).join('')}</div>`; }
-function productCard(p){ return `<article class="product-card"><a href="#product/${p.id}"><img src="${p.image}" alt="${p.name}"></a><div class="product-info"><p class="eyebrow">${collectionTitle(p.collection)}</p><a href="#product/${p.id}"><h3>${p.name}</h3></a><p>${p.tagline}</p><div class="product-meta"><strong>${money(p.price)}</strong><span>NZD</span></div><button class="add" data-add="${p.id}">Add to bag</button></div></article>`; }
-function productTemplate(p){ return `<section class="product-page"><img src="${p.image}" alt="${p.name}"><div><p class="eyebrow">Eden Toy Co. · ${collectionTitle(p.collection)}</p><h1>${p.name}</h1><p class="price">${money(p.price)} NZD</p><p>${p.tagline}. ${p.description}</p><ul class="feature-list">${p.features.map(f=>`<li>✦ ${f}</li>`).join('')}</ul><button class="primary wide add" data-add="${p.id}">Add to bag</button><p class="fineprint">Prototype price shown. Confirm retail price, shipping rules and stock before launch.</p></div></section>`; }
+function productCard(p){ return `<article class="product-card"><a class="product-image-link" href="#product/${p.id}"><img src="${p.image}" alt="${p.name}"><span class="quick-badge">ORBITS</span></a><div class="product-info"><p class="eyebrow">${collectionTitle(p.collection)}</p><a href="#product/${p.id}"><h3>${p.name}</h3></a><p>${p.tagline}</p><div class="product-meta"><strong>${money(p.price)}</strong><span>NZD</span></div><button class="add" data-add="${p.id}">Add to bag</button></div></article>`; }
+function productTemplate(p){ return `<section class="product-page"><div class="product-visual"><img src="${p.image}" alt="${p.name}"><span class="product-logo-chip"><img src="assets/branding/orbits-logo.svg" alt="ORBITS"></span></div><div><p class="eyebrow">ORBITS · ${collectionTitle(p.collection)}</p><h1>${p.name}</h1><p class="price">${money(p.price)} NZD</p><p>${p.tagline}. ${p.description}</p><ul class="feature-list">${p.features.map(f=>`<li>✦ ${f}</li>`).join('')}</ul><button class="primary wide add" data-add="${p.id}">Add to bag</button><p class="fineprint">Prototype price shown. Confirm retail price, shipping rules and stock before launch.</p></div></section>`; }
 function bindFilters(){ document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{ document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); const key=btn.dataset.filter; const items=key==='all'?products:products.filter(p=>p.collection===key); document.getElementById('gridWrap').innerHTML=productGrid(items); bindAddButtons(); })); }
 function bindAddButtons(){ document.querySelectorAll('[data-add]').forEach(btn=>btn.addEventListener('click',()=>{ const id=btn.dataset.add; cart[id]=(cart[id]||0)+1; persistCart(); openCart(); })); }
 function persistCart(){ localStorage.setItem('edentoyco-cart',JSON.stringify(cart)); updateCart(); }
-function updateCart(){ const count=Object.values(cart).reduce((a,b)=>a+b,0); document.getElementById('cartCount').textContent=count; const rows=Object.entries(cart).map(([id,qty])=>{ const p=products.find(x=>x.id===id); if(!p)return ''; return `<div class="cart-item"><img src="${p.image}" alt="${p.name}"><div><strong>${p.name}</strong><p>${money(p.price)}</p><div class="qty"><button data-qty="${id}" data-delta="-1">−</button><span>${qty}</span><button data-qty="${id}" data-delta="1">+</button></div></div><strong>${money(p.price*qty)}</strong></div>`; }).join(''); document.getElementById('cartItems').innerHTML=rows||'<div class="empty">Your Eden Toy Co. bag is empty.</div>'; const subtotal=Object.entries(cart).reduce((sum,[id,qty])=>{ const p=products.find(x=>x.id===id); return sum+(p?p.price*qty:0); },0); document.getElementById('subtotal').textContent=money(subtotal)+' NZD'; document.querySelectorAll('[data-qty]').forEach(btn=>btn.addEventListener('click',()=>{ const id=btn.dataset.qty; cart[id]=(cart[id]||0)+Number(btn.dataset.delta); if(cart[id]<=0)delete cart[id]; persistCart(); })); }
+function updateCart(){ const count=Object.values(cart).reduce((a,b)=>a+b,0); document.getElementById('cartCount').textContent=count; const rows=Object.entries(cart).map(([id,qty])=>{ const p=products.find(x=>x.id===id); if(!p)return ''; return `<div class="cart-item"><img src="${p.image}" alt="${p.name}"><div><strong>${p.name}</strong><p>${money(p.price)}</p><div class="qty"><button data-qty="${id}" data-delta="-1">−</button><span>${qty}</span><button data-qty="${id}" data-delta="1">+</button></div></div><strong>${money(p.price*qty)}</strong></div>`; }).join(''); document.getElementById('cartItems').innerHTML=rows||'<div class="empty">Your ORBITS bag is empty.</div>'; const subtotal=Object.entries(cart).reduce((sum,[id,qty])=>{ const p=products.find(x=>x.id===id); return sum+(p?p.price*qty:0); },0); document.getElementById('subtotal').textContent=money(subtotal)+' NZD'; document.querySelectorAll('[data-qty]').forEach(btn=>btn.addEventListener('click',()=>{ const id=btn.dataset.qty; cart[id]=(cart[id]||0)+Number(btn.dataset.delta); if(cart[id]<=0)delete cart[id]; persistCart(); })); }
 function openCart(){ document.getElementById('cartDrawer').classList.add('open'); document.getElementById('overlay').classList.add('show'); document.getElementById('cartDrawer').setAttribute('aria-hidden','false'); }
 function closeCart(){ document.getElementById('cartDrawer').classList.remove('open'); document.getElementById('overlay').classList.remove('show'); document.getElementById('cartDrawer').setAttribute('aria-hidden','true'); }
 document.getElementById('cartButton').addEventListener('click',openCart);
 document.getElementById('closeCart').addEventListener('click',closeCart);
 document.getElementById('overlay').addEventListener('click',closeCart);
-document.getElementById('checkoutButton').addEventListener('click',()=>alert('Eden Toy Co. checkout integration is not yet live. Connect Stripe, Shopify, or another provider before accepting payment.'));
+document.getElementById('checkoutButton').addEventListener('click',()=>alert('ORBITS checkout integration is not yet live. Connect Stripe, Shopify, or another provider before accepting payment.'));
 init();
