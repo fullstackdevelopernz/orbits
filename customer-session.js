@@ -28,20 +28,18 @@
     }catch{}
   }
 
-  // Never inherit a cart left in persistent browser storage by an earlier visitor.
   try{ localStorage.removeItem(CART_KEY); }catch{}
   try{ cart=readSessionCart(); }catch{}
 
-  // All existing add/remove controls call persistCart(), so make persistence session-only.
-  try{
-    persistCart=function(){ writeSessionCart(); };
-  }catch{}
+  try{ persistCart=function(){ writeSessionCart(); }; }catch{}
 
   function guardCustomerRoute(){
     if(location.pathname.endsWith('/operations.html')) return;
     if(location.hash==='#admin' || location.hash.startsWith('#admin/')){
       location.replace(location.pathname+location.search+'#account');
+      return;
     }
+    if(location.hash==='#confirmation') clearCustomerCart();
   }
 
   function bindAuthIsolation(){
@@ -77,6 +75,5 @@
   });
   window.addEventListener('hashchange',guardCustomerRoute);
 
-  // Expose only for controlled checkout completion / customer sign-out handling.
   window.edenClearCustomerCart=clearCustomerCart;
 })();
