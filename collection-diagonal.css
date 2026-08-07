@@ -31,9 +31,7 @@
   align-items:flex-start;
   padding:clamp(70px,8vw,120px) clamp(34px,7vw,110px);
 }
-.collection-hero-brand>div:first-child h1{
-  max-width:7.5ch;
-}
+.collection-hero-brand>div:first-child h1{max-width:7.5ch}
 
 .collection-hero-brand .collection-preview-detail{
   position:absolute!important;
@@ -58,10 +56,6 @@
   display:block!important;
   transform:none!important;
 }
-
-/* Exact highlight on the same edge as the clipped artwork.
-   Artwork is 58% wide, starting at x=42%; its clip begins 22% into that width.
-   Therefore the visible diagonal runs from x=54.76% at the top to x=42% at the bottom. */
 .collection-hero-brand:after{
   content:"";
   position:absolute;
@@ -73,32 +67,105 @@
   filter:drop-shadow(0 0 8px rgba(255,255,255,.38));
 }
 
+/* Tablet/mobile: stop treating the desktop diagonal as a fixed-height composition.
+   Copy owns its natural height, artwork follows it, and the CTA stays inside the copy block. */
 @media(max-width:900px){
-  .collection-hero-brand{min-height:760px!important}
+  .collection-hero-brand{
+    min-height:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    overflow:hidden!important;
+  }
   .collection-hero-brand>div:first-child{
-    width:100%;
-    min-height:360px;
-    padding:72px 28px 36px;
+    width:100%!important;
+    min-height:0!important;
+    padding:88px 28px 42px!important;
+    flex:0 0 auto!important;
+  }
+  .collection-hero-brand>div:first-child h1{
+    max-width:none!important;
+    overflow-wrap:normal;
+    word-break:normal;
+  }
+  .collection-hero-brand>div:first-child>p:not(.eyebrow){
+    max-width:650px;
+    margin-bottom:24px!important;
+  }
+  .collection-hero-brand>div:first-child .primary{
+    position:relative!important;
+    z-index:6!important;
+    width:auto!important;
+    max-width:100%!important;
+    margin-top:0!important;
+    align-self:flex-start!important;
   }
   .collection-hero-brand .collection-preview-detail{
-    inset:auto 0 0 0!important;
+    position:relative!important;
+    inset:auto!important;
+    order:2!important;
     width:100%!important;
-    height:56%!important;
-    clip-path:polygon(0 18%,100% 0,100% 100%,0 100%);
+    height:auto!important;
+    min-height:0!important;
+    aspect-ratio:1 / 1!important;
+    clip-path:none!important;
+    overflow:hidden!important;
   }
-  /* Image begins at 44% hero height. Its diagonal runs from y=54.08% on the left to 44% on the right. */
-  .collection-hero-brand:after{
-    clip-path:polygon(0 53.78%,0 54.38%,100% 44.30%,100% 43.70%);
+  .collection-hero-brand .collection-preview-detail .collection-art{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center!important;
   }
+  .collection-hero-brand:after{display:none!important}
 }
 
 @media(max-width:560px){
-  .collection-hero-brand{min-height:700px!important}
-  .collection-hero-brand>div:first-child{min-height:330px;padding:64px 20px 28px}
-  .collection-hero-brand .collection-preview-detail{height:57%!important;clip-path:polygon(0 15%,100% 0,100% 100%,0 100%)}
-  .collection-hero-brand>div:first-child h1{max-width:8ch}
-  /* Image begins at 43%; 15% of its 57% height puts the left edge at 51.55%. */
-  .collection-hero-brand:after{
-    clip-path:polygon(0 51.25%,0 51.85%,100% 43.30%,100% 42.70%);
+  .collection-hero-brand{min-height:0!important}
+  .collection-hero-brand>div:first-child{
+    min-height:0!important;
+    padding:92px 20px 30px!important;
   }
+  .collection-hero-brand>div:first-child .launch-chip{
+    margin:0 0 18px!important;
+    white-space:normal!important;
+  }
+  .collection-hero-brand>div:first-child .eyebrow{
+    margin:0 0 22px!important;
+    font-size:10px!important;
+    line-height:1.45!important;
+    letter-spacing:.18em!important;
+  }
+  .collection-hero-brand>div:first-child h1{
+    max-width:none!important;
+    margin:0 0 24px!important;
+    font-size:clamp(48px,14.5vw,68px)!important;
+    line-height:.88!important;
+    letter-spacing:-.065em!important;
+  }
+  .collection-hero-brand>div:first-child>p:not(.eyebrow){
+    margin:0 0 24px!important;
+    font-size:clamp(17px,5vw,22px)!important;
+    line-height:1.42!important;
+  }
+  .collection-hero-brand>div:first-child .primary{
+    width:100%!important;
+    min-height:58px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    padding:15px 18px!important;
+    text-align:center!important;
+    white-space:normal!important;
+    line-height:1.15!important;
+  }
+  .collection-hero-brand .collection-preview-detail{
+    aspect-ratio:1 / 1!important;
+  }
+}
+
+@media(max-width:380px){
+  .collection-hero-brand>div:first-child{padding-left:16px!important;padding-right:16px!important}
+  .collection-hero-brand>div:first-child h1{font-size:46px!important}
 }
