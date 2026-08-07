@@ -36,7 +36,7 @@ function fullBleedCampaignSlide(slide,index){
     <img class="campaign-background" src="${slide.image}" alt="" aria-hidden="true">
     <div class="campaign-poster-stage"><img class="campaign-poster" src="${slide.image}" alt="${slide.alt}"></div>
     <div class="campaign-shade" aria-hidden="true"></div>
-    <a class="campaign-wordmark" href="#home" aria-label="ORBITS home">ORBITS</a>
+    <a class="footer-wordmark" href="#home" aria-label="ORBITS home">orbits</a>
     <div class="campaign-message">
       <span class="campaign-kicker">${slide.kicker}</span>
       <h1>${slide.headline}</h1>
