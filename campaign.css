@@ -19,3 +19,141 @@
 @media(max-width:1050px){.campaign-carousel{height:auto;min-height:850px}.campaign-slide{grid-template-columns:1fr;grid-template-rows:minmax(520px,62vh) auto}.campaign-art{border-right:0;border-bottom:4px solid var(--comic-black)}.campaign-copy{padding:34px 7vw 58px}.campaign-copy h1{max-width:11ch}.carousel-arrow{top:31%}.brand-collection-card{min-height:660px!important}.brand-collection-card .collection-preview-card{height:400px!important}}
 @media(max-width:680px){.campaign-carousel{min-height:790px}.campaign-slide{grid-template-rows:470px auto}.campaign-panel{border-width:3px;box-shadow:4px 4px 0 var(--comic-black)}.panel-1{left:1%;top:3%;width:37%;height:29%}.panel-2{left:39%;top:2%;width:34%;height:28%}.panel-3{right:1%;top:11%;width:29%;height:27%}.panel-4{right:2%;top:38%;width:33%;height:27%}.panel-5{left:1%;bottom:2%;width:35%;height:28%}.panel-6{left:37%;bottom:1%;width:34%;height:27%}.panel-7{right:1%;bottom:3%;width:29%;height:24%}.panel-8{display:none}.campaign-title-lockup{max-width:92%}.campaign-title-lockup span{font-size:clamp(46px,15vw,76px)}.campaign-title-lockup strong{font-size:clamp(32px,11vw,54px)}.campaign-copy{padding:26px 20px 64px}.campaign-copy h1{font-size:clamp(42px,12vw,62px)!important;max-width:none}.campaign-copy>p{font-size:15px}.campaign-actions{width:100%}.campaign-actions .primary,.campaign-actions .secondary{width:100%;text-align:center}.carousel-arrow{top:29%;width:40px;height:40px}.carousel-prev{left:8px}.carousel-next{right:8px}.carousel-dots{bottom:12px}.brand-collection-card{min-height:560px!important}.brand-collection-card .collection-preview-card{height:310px!important}.launch-chip{font-size:9px!important}}
 @media(prefers-reduced-motion:reduce){.campaign-slide,.campaign-panel,.collection-art{transition:none!important;animation:none!important}}
+
+/* === HERO POLISH OVERRIDES === */
+
+/* Make the hero fill the screen cleanly */
+.campaign-carousel,
+.hero-carousel,
+.hero-slider {
+  min-height: 100svh !important;
+  height: 100svh !important;
+}
+
+/* Ensure each slide fills the screen */
+.campaign-slide,
+.hero-slide {
+  min-height: 100svh !important;
+  height: 100svh !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+}
+
+/* If the slide artwork is an IMG, fit it properly */
+.campaign-slide img,
+.hero-slide img,
+.hero-slide-image,
+.campaign-slide-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  display: block !important;
+}
+
+/* If the slide uses a background image instead of an IMG */
+.campaign-slide,
+.hero-slide {
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Give the slides breathing room with branded background colour */
+.campaign-slide.zodiac,
+.hero-slide.zodiac {
+  background-color: #5a47d6 !important;
+}
+
+.campaign-slide.manifestation,
+.hero-slide.manifestation {
+  background-color: #ff5d98 !important;
+}
+
+.campaign-slide.crystal,
+.hero-slide.crystal {
+  background-color: #24bfd0 !important;
+}
+
+/* ORBITS wordmark badge */
+.campaign-title-lockup,
+.hero-orbits-wordmark,
+.hero-brand-lockup {
+  position: absolute !important;
+  top: 2rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 20 !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0.9rem 1.6rem !important;
+  background: linear-gradient(135deg, #ff2f86 0%, #ffb000 100%) !important;
+  border: 4px solid #ffffff !important;
+  border-radius: 18px !important;
+  box-shadow:
+    0 10px 0 #111111,
+    0 16px 30px rgba(0,0,0,0.18) !important;
+}
+
+/* Make the ORBITS text thicker and cleaner */
+.campaign-title-lockup,
+.campaign-title-lockup span,
+.campaign-title-lockup strong,
+.hero-orbits-wordmark,
+.hero-brand-lockup {
+  color: #ffffff !important;
+  font-weight: 900 !important;
+  font-size: clamp(1.5rem, 3vw, 2.75rem) !important;
+  line-height: 1 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  text-shadow:
+    2px 2px 0 rgba(0,0,0,0.18),
+    0 0 0 transparent !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+/* Remove extra stacked styling if ORBITS is split across child spans */
+.campaign-title-lockup span,
+.campaign-title-lockup strong {
+  display: inline !important;
+}
+
+/* Keep content from colliding with the top badge */
+.campaign-copy,
+.hero-slide-copy,
+.hero-caption {
+  padding-top: 7.5rem !important;
+}
+
+/* Mobile tuning */
+@media (max-width: 768px) {
+  .campaign-title-lockup,
+  .hero-orbits-wordmark,
+  .hero-brand-lockup {
+    top: 1rem !important;
+    padding: 0.75rem 1.2rem !important;
+    border-width: 3px !important;
+    border-radius: 14px !important;
+  }
+
+  .campaign-copy,
+  .hero-slide-copy,
+  .hero-caption {
+    padding-top: 6rem !important;
+  }
+
+  .campaign-slide img,
+  .hero-slide img,
+  .hero-slide-image,
+  .campaign-slide-image {
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+}
