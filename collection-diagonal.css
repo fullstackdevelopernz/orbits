@@ -59,20 +59,18 @@
   transform:none!important;
 }
 
-/* subtle highlight along the diagonal without a heavy black rule */
+/* Exact highlight on the same edge as the clipped artwork.
+   Artwork is 58% wide, starting at x=42%; its clip begins 22% into that width.
+   Therefore the visible diagonal runs from x=54.76% at the top to x=42% at the bottom. */
 .collection-hero-brand:after{
   content:"";
   position:absolute;
-  z-index:2;
-  top:-8%;
-  bottom:-8%;
-  left:48.5%;
-  width:5px;
-  background:rgba(255,255,255,.9);
-  transform:rotate(8deg);
-  transform-origin:center;
-  box-shadow:0 0 24px rgba(255,255,255,.45);
+  inset:0;
+  z-index:4;
   pointer-events:none;
+  background:rgba(255,255,255,.94);
+  clip-path:polygon(54.52% 0,54.98% 0,42.24% 100%,41.78% 100%);
+  filter:drop-shadow(0 0 8px rgba(255,255,255,.38));
 }
 
 @media(max-width:900px){
@@ -88,13 +86,9 @@
     height:56%!important;
     clip-path:polygon(0 18%,100% 0,100% 100%,0 100%);
   }
+  /* Image begins at 44% hero height. Its diagonal runs from y=54.08% on the left to 44% on the right. */
   .collection-hero-brand:after{
-    top:auto;
-    bottom:54%;
-    left:-5%;
-    width:110%;
-    height:4px;
-    transform:rotate(-7deg);
+    clip-path:polygon(0 53.78%,0 54.38%,100% 44.30%,100% 43.70%);
   }
 }
 
@@ -103,4 +97,8 @@
   .collection-hero-brand>div:first-child{min-height:330px;padding:64px 20px 28px}
   .collection-hero-brand .collection-preview-detail{height:57%!important;clip-path:polygon(0 15%,100% 0,100% 100%,0 100%)}
   .collection-hero-brand>div:first-child h1{max-width:8ch}
+  /* Image begins at 43%; 15% of its 57% height puts the left edge at 51.55%. */
+  .collection-hero-brand:after{
+    clip-path:polygon(0 51.25%,0 51.85%,100% 43.30%,100% 42.70%);
+  }
 }
