@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eden Toy Co. | Orbits Plush Bag Charms</title>
-  <meta name="description" content="Eden Toy Co. creates premium plush bag charms full of personality, softness and joy. Shop the Orbits collection.">
+  <title>ORBITS by Eden Toy Co. | Plush Bag Charms</title>
+  <meta name="description" content="ORBITS by Eden Toy Co. — playful premium plush bag charms made to clip on, collect and gift.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="assets/branding/etc-favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/branding/orbits-logo.svg">
   <link rel="apple-touch-icon" href="assets/branding/eden-toy-co-logo.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="eden-experience.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand orbit-brand" href="#home" aria-label="Orbits home">
-      <span class="orbit-charm-mark orbit-charm-mark-header" aria-hidden="true"><span class="orbit-charm-loop"></span><span class="orbit-charm-face">ORBITS</span></span>
+    <a class="brand orbit-brand" href="#home" aria-label="ORBITS home">
+      <img class="orbits-site-logo header-orbits-logo" src="assets/branding/orbits-logo.svg" alt="ORBITS">
     </a>
     <nav>
       <a href="#shop">Shop Orbits</a>
@@ -28,33 +28,47 @@
   </header>
 
   <main id="app">
-    <section class="loading-stage" aria-label="Loading Eden Toy Co.">
-      <img src="assets/branding/eden-toy-co-logo.png" alt="Eden Toy Co.">
-      <p>Loading Orbits…</p>
+    <section class="loading-stage" aria-label="Loading ORBITS">
+      <img class="loading-orbits-logo" src="assets/branding/orbits-logo.svg" alt="ORBITS">
+      <p>Loading your Orbits…</p>
     </section>
   </main>
 
   <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
     <div class="cart-head">
-      <div><p class="eyebrow">Eden Toy Co.</p><h2>Your Orbit Bag</h2><p class="cart-subbrand">Soft plush charm picks, ready for checkout.</p></div>
+      <div>
+        <img class="cart-orbits-logo" src="assets/branding/orbits-logo.svg" alt="ORBITS">
+        <h2>Your Bag</h2>
+        <p class="cart-subbrand">Your favourite little personalities, all in one place.</p>
+      </div>
       <button id="closeCart" class="icon-button" aria-label="Close cart">×</button>
     </div>
     <div id="cartItems" class="cart-items"></div>
     <div class="cart-footer">
       <div class="subtotal"><span>Subtotal</span><strong id="subtotal">$0.00 NZD</strong></div>
       <button class="primary wide" id="checkoutButton">Proceed to checkout</button>
-      <p class="fineprint">Eden Toy Co. checkout is currently configured as a safe demonstration. Connect Stripe, Shopify or another payment provider before taking live orders.</p>
+      <p class="fineprint">Checkout is currently configured as a safe demonstration. Connect a payment provider before taking live orders.</p>
     </div>
   </aside>
   <div class="overlay" id="overlay"></div>
 
   <footer>
     <div class="footer-brand-block">
-      <span class="orbit-charm-mark orbit-charm-mark-footer" aria-hidden="true"><span class="orbit-charm-loop"></span><span class="orbit-charm-face">ORBITS</span></span>
-      <p>Playful, premium plush accessories designed to be clipped on, collected and gifted.</p>
+      <img class="orbits-site-logo footer-orbits-logo" src="assets/branding/orbits-logo.svg" alt="ORBITS">
+      <p>Playful premium plush bag charms by Eden Toy Co. Clip them on. Carry them everywhere. Collect the ones that feel like you.</p>
     </div>
-    <div><h3 class="footer-title">Shop</h3><p><a href="#shop">All Orbits</a></p><p><a href="#collection/crystal">Crystal Collection</a></p><p><a href="#collection/manifestation">Manifestation Collection</a></p><p><a href="#collection/zodiac">Zodiac Collection</a></p></div>
-    <div><h3 class="footer-title">Brand</h3><p>Orbits are a signature Eden Toy Co. product line.</p><p>Premium plush · Gold-tone hardware · Giftable collectibles</p></div>
+    <div>
+      <h3 class="footer-title">Shop</h3>
+      <p><a href="#shop">All Orbits</a></p>
+      <p><a href="#collection/crystal">Crystal Collection</a></p>
+      <p><a href="#collection/manifestation">Manifestation Collection</a></p>
+      <p><a href="#collection/zodiac">Zodiac Collection</a></p>
+    </div>
+    <div>
+      <h3 class="footer-title">ORBITS</h3>
+      <p>A signature Eden Toy Co. collection.</p>
+      <p>Premium plush · Embroidered details · Gold-tone hardware</p>
+    </div>
   </footer>
 
   <script src="app.js"></script>
