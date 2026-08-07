@@ -42,7 +42,7 @@ function collectionPreview(key, context='card'){
   return `<div class="collection-preview collection-preview-${context} ${key}">
     <img class="collection-art" src="assets/${key}-collection.png" alt="${meta.title} Orbit collection">
     <span class="collection-brand-sticker" aria-label="ORBITS branded collection">
-      <img src="assets/branding/orbits-logo.svg" alt="ORBITS">
+      <img src="assets/branding/orbits-logo.png" alt="ORBITS">
     </span>
   </div>`;
 }
@@ -51,7 +51,7 @@ function homeTemplate(){
   return `
   <section class="hero hero-reimagined">
     <div class="hero-copy">
-      <img class="hero-master-logo" src="assets/branding/orbits-logo.svg" alt="ORBITS">
+      <img class="hero-master-logo" src="assets/branding/orbits-logo.png" alt="ORBITS">
       <p class="hero-kicker">By Eden Toy Co.</p>
       <h1>Little plush personalities for bags, keys and everyday magic.</h1>
       <p class="hero-intro">Choose the feeling that fits you. Every Orbit is soft, expressive, giftable and made to bring a little joy wherever it goes.</p>
@@ -111,7 +111,7 @@ function collectionTemplate(key,items){
 function collectionCopy(key){ return {crystal:'Twelve crystal-inspired companions, each matched to a distinct intention and finished with signature gold-tone hardware.',manifestation:'Twelve plush symbols of abundance, love, luck, protection, peace, healing, confidence, success, clarity, joy, dreams and alignment.',zodiac:'Twelve character-led plush charms, one for every sign of the zodiac.'}[key]; }
 function productGrid(items){ return `<div class="product-grid">${items.map(productCard).join('')}</div>`; }
 function productCard(p){ return `<article class="product-card"><a class="product-image-link" href="#product/${p.id}"><img src="${p.image}" alt="${p.name}"><span class="quick-badge">ORBITS</span></a><div class="product-info"><p class="eyebrow">${collectionTitle(p.collection)}</p><a href="#product/${p.id}"><h3>${p.name}</h3></a><p>${p.tagline}</p><div class="product-meta"><strong>${money(p.price)}</strong><span>NZD</span></div><button class="add" data-add="${p.id}">Add to bag</button></div></article>`; }
-function productTemplate(p){ return `<section class="product-page"><div class="product-visual"><img src="${p.image}" alt="${p.name}"><span class="product-logo-chip"><img src="assets/branding/orbits-logo.svg" alt="ORBITS"></span></div><div><p class="eyebrow">ORBITS · ${collectionTitle(p.collection)}</p><h1>${p.name}</h1><p class="price">${money(p.price)} NZD</p><p>${p.tagline}. ${p.description}</p><ul class="feature-list">${p.features.map(f=>`<li>✦ ${f}</li>`).join('')}</ul><button class="primary wide add" data-add="${p.id}">Add to bag</button><p class="fineprint">Prototype price shown. Confirm retail price, shipping rules and stock before launch.</p></div></section>`; }
+function productTemplate(p){ return `<section class="product-page"><div class="product-visual"><img src="${p.image}" alt="${p.name}"><span class="product-logo-chip"><img src="assets/branding/orbits-logo.png" alt="ORBITS"></span></div><div><p class="eyebrow">ORBITS · ${collectionTitle(p.collection)}</p><h1>${p.name}</h1><p class="price">${money(p.price)} NZD</p><p>${p.tagline}. ${p.description}</p><ul class="feature-list">${p.features.map(f=>`<li>✦ ${f}</li>`).join('')}</ul><button class="primary wide add" data-add="${p.id}">Add to bag</button><p class="fineprint">Prototype price shown. Confirm retail price, shipping rules and stock before launch.</p></div></section>`; }
 function bindFilters(){ document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{ document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); const key=btn.dataset.filter; const items=key==='all'?products:products.filter(p=>p.collection===key); document.getElementById('gridWrap').innerHTML=productGrid(items); bindAddButtons(); })); }
 function bindAddButtons(){ document.querySelectorAll('[data-add]').forEach(btn=>btn.addEventListener('click',()=>{ const id=btn.dataset.add; cart[id]=(cart[id]||0)+1; persistCart(); openCart(); })); }
 function persistCart(){ localStorage.setItem('edentoyco-cart',JSON.stringify(cart)); updateCart(); }
