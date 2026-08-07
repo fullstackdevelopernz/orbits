@@ -1,5 +1,6 @@
 const EDEN_SUPABASE_URL = 'https://hbgopsvvoylsxcebllsq.supabase.co';
 const EDEN_SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_fscxNAUGn8qpwoJ4vDET6w_o1VLvTGg';
+const EDEN_AUTH_REDIRECT_URL = 'https://www.edentoyco.com/#account';
 const edenSupabase = window.supabase.createClient(EDEN_SUPABASE_URL, EDEN_SUPABASE_PUBLISHABLE_KEY, {
   auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true }
 });
@@ -139,7 +140,10 @@ function bindEdenSignedOut(){
     const fd = new FormData(e.currentTarget);
     const { data, error } = await edenSupabase.auth.signUp({
       email:fd.get('email'), password:fd.get('password'),
-      options:{ data:{ full_name:fd.get('full_name') } }
+      options:{
+        emailRedirectTo: EDEN_AUTH_REDIRECT_URL,
+        data:{ full_name:fd.get('full_name') }
+      }
     });
     if(error) return edenAuthMessage(error.message, 'error');
     if(data.session){
@@ -154,7 +158,7 @@ function bindEdenSignedOut(){
     const email = document.querySelector('#edenSigninForm input[name="email"]')?.value?.trim();
     if(!email) return edenAuthMessage('Enter your email address first, then choose Forgot password.', 'error');
     edenAuthMessage('Sending password reset email…');
-    const { error } = await edenSupabase.auth.resetPasswordForEmail(email, {redirectTo:'https://www.edentoyco.com/'});
+    const { error } = await edenSupabase.auth.resetPasswordForEmail(email, {redirectTo:EDEN_AUTH_REDIRECT_URL});
     edenAuthMessage(error ? error.message : 'Password reset email sent. Open the link in that email to choose a new password.', error ? 'error' : 'success');
   });
 }
