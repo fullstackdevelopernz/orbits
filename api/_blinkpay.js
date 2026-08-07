@@ -1,3 +1,4 @@
+const axios = require('axios');
 const { BlinkDebitClient, AuthFlowDetailTypeEnum, AmountCurrencyEnum } = require('blink-debit-api-client-node');
 const { supabaseRest, resolveCustomer, value2, json, allowedMethod, bearer } = require('./_paypal');
 
@@ -14,7 +15,7 @@ function assertBlinkPayConfig(){
 }
 
 function blinkClient(){
-  return new BlinkDebitClient(undefined, {
+  return new BlinkDebitClient(axios, {
     blinkpay: {
       debitUrl: BLINKPAY_DEBIT_URL,
       clientId: BLINKPAY_CLIENT_ID,
